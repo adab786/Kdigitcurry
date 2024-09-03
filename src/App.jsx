@@ -1,12 +1,17 @@
 import Nav from "./components/Nav";
 import Table from "./components/Table";
+import AddProduct from "./components/Addproducts";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <Router>
       <Nav />
-      <Table />
-    </>
+      <Routes>
+        <Route path="/" element={<Table />} />
+        <Route path="/add-product" element={<AddProduct />} />
+      </Routes>
+    </Router>
   );
 }
 

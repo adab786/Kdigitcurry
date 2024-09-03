@@ -1,52 +1,33 @@
-import React, { useState } from "react";
-import tabledata from "../db/tabledata"; // Ensure the path is correct
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  editItem,
+  saveItem,
+  cancelEdit,
+  updateFormValue,
+} from "../utils/ProjectAction"; // Adjust import if needed
 
 function Table() {
-  const [products, setProducts] = useState(tabledata.products); // State to manage products
-  const [editId, setEditId] = useState(null); // Track which item is being edited
-  const [formValues, setFormValues] = useState({}); // Track form input values
+  const dispatch = useDispatch();
+  const { products, editId, formValues } = useSelector(
+    (state) => state.products
+  );
 
   const handleEditClick = (item) => {
-    setEditId(item.id);
-    setFormValues({
-      name: item.name,
-      material: item.details.material,
-      unitLength: item.details.unitLength,
-      shape: item.details.shape,
-      price: item.price,
-    });
+    dispatch(editItem(item));
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormValues((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    dispatch(updateFormValue({ [name]: value }));
   };
 
   const handleSave = () => {
-    setProducts((prev) =>
-      prev.map((item) =>
-        item.id === editId
-          ? {
-              ...item,
-              name: formValues.name,
-              details: {
-                material: formValues.material,
-                unitLength: formValues.unitLength,
-                shape: formValues.shape,
-              },
-              price: formValues.price,
-            }
-          : item
-      )
-    );
-    setEditId(null);
+    dispatch(saveItem(formValues));
   };
 
   const handleCancel = () => {
-    setEditId(null);
+    dispatch(cancelEdit());
   };
 
   const tableData = products.map((item) => (
@@ -56,7 +37,7 @@ function Table() {
           <input
             type="text"
             name="name"
-            value={formValues.name}
+            value={formValues.name || ""}
             onChange={handleChange}
             className="border border-gray-300 p-1 rounded"
           />
@@ -91,7 +72,7 @@ function Table() {
               <input
                 type="text"
                 name="material"
-                value={formValues.material}
+                value={formValues.material || ""}
                 onChange={handleChange}
                 className="border border-gray-300 p-1 rounded"
               />
@@ -101,7 +82,7 @@ function Table() {
               <input
                 type="text"
                 name="unitLength"
-                value={formValues.unitLength}
+                value={formValues.unitLength || ""}
                 onChange={handleChange}
                 className="border border-gray-300 p-1 rounded"
               />
@@ -111,7 +92,7 @@ function Table() {
               <input
                 type="text"
                 name="shape"
-                value={formValues.shape}
+                value={formValues.shape || ""}
                 onChange={handleChange}
                 className="border border-gray-300 p-1 rounded"
               />
@@ -130,7 +111,7 @@ function Table() {
           <input
             type="text"
             name="price"
-            value={formValues.price}
+            value={formValues.price || ""}
             onChange={handleChange}
             className="border border-gray-300 p-1 rounded"
           />
