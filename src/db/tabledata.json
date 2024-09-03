@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Carbon Steel A105 Tubing",
+      "details": {
+        "material": "Carbon Steel",
+        "unitLength": "6 meters",
+        "shape": "Round"
+      },
+      "price": "350 / KG"
+    },
+    {
+      "id": 2,
+      "name": "Hastelloy C22",
+      "details": {
+        "material": "Hastelloy",
+        "unitLength": "6 meters",
+        "shape": "Round"
+      },
+      "price": "450 / KG"
+    },
+    {
+      "id": 3,
+      "name": "90/10 Pipe Fittings",
+      "details": {
+        "material": "90/10",
+        "unitLength": "varies",
+        "shape": "Round"
+      },
+      "price": "500 / KG"
+    },
+    {
+      "id": 4,
+      "name": "Stainless Steel Sheet",
+      "details": {
+        "material": "Stainless Steel",
+        "unitLength": "2 meters x 1 meter",
+        "shape": "Sheet"
+      },
+      "price": "300 / Sheet"
+    },
+    {
+      "id": 5,
+      "name": "Aluminum Extrusions",
+      "details": {
+        "material": "Aluminum",
+        "unitLength": "3 meters",
+        "shape": "Extrusion"
+      },
+      "price": "200 / Meter"
+    },
+    {
+      "id": 6,
+      "name": "Copper Wire",
+      "details": {
+        "material": "Copper",
+        "unitLength": "100 meters",
+        "shape": "Wire"
+      },
+      "price": "1500 / Roll"
+    },
+    {
+      "id": 7,
+      "name": "Titanium Plate",
+      "details": {
+        "material": "Titanium",
+        "unitLength": "1 meter x 1 meter",
+        "shape": "Plate"
+      },
+      "price": "1000 / Plate"
+    },
+    {
+      "id": 8,
+      "name": "Nickel Alloy Rods",
+      "details": {
+        "material": "Nickel Alloy",
+        "unitLength": "2 meters",
+        "shape": "Rod"
+      },
+      "price": "800 / Rod"
+    },
+    {
+      "id": 9,
+      "name": "Brass Fittings",
+      "details": {
+        "material": "Brass",
+        "unitLength": "varies",
+        "shape": "Fittings"
+      },
+      "price": "600 / KG"
+    },
+    {
+      "id": 10,
+      "name": "Polyethylene Tubing",
+      "details": {
+        "material": "Polyethylene",
+        "unitLength": "50 meters",
+        "shape": "Tubing"
+      },
+      "price": "120 / Roll"
+    }
+  ]
+}
